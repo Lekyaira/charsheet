@@ -1,0 +1,7 @@
+<div class="skill" [ngStyle]="{'cursor': onClick ? 'pointer' : 'default'}" (click)="click()" *ngIf="skill">
+    <span class="title">{{skill.name}} </span>
+    <span class="level" *ngIf="skill.level == 1">+3</span>
+    <span class="level" *ngIf="skill.level == 2">+4</span>
+    <span class="level" *ngIf="skill.level == 3">+5</span>
+    <!--<span class="dots" [ngStyle]="{'right': alignDots}"><span class="dot" *ngFor="let x of valArr">&bull;</span></span>-->
+</div>

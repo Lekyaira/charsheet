@@ -1,0 +1,43 @@
+<div *ngIf="!character">Loading...</div>
+<div *ngIf="character">
+<div class="title">
+    <h2>{{character.name}}</h2>
+    <h3>Level {{character.level}} {{character.species}} {{character.class}}</h3>
+</div>
+<div class="sheet">
+    <div class="ability-scores">
+        <app-attribute-box title="strength" [value]="character.strength" [onClick]="abilityClick" [showModifer]="true"></app-attribute-box>
+        <app-attribute-box title="dexterity" [value]="character.dexterity" [onClick]="abilityClick" [showModifer]="true"></app-attribute-box>
+        <app-attribute-box title="intelligence" [value]="character.intelligence" [onClick]="abilityClick" [showModifer]="true"></app-attribute-box>
+        <app-attribute-box title="charisma" [value]="character.charisma" [onClick]="abilityClick" [showModifer]="true"></app-attribute-box>
+        <app-attribute-box title="luck" [value]="character.luck" [onClick]="abilityClick" [showModifer]="true"></app-attribute-box>
+    </div>
+    <div class="defenses">
+        <app-attribute-box title="fortitude" [value]="charDefenses.fortitude"></app-attribute-box>
+        <app-attribute-box title="reflexes" [value]="charDefenses.reflexes"></app-attribute-box>
+        <app-attribute-box title="will" [value]="charDefenses.will"></app-attribute-box>
+        <app-attribute-box title="insight" [value]="charDefenses.insight"></app-attribute-box>
+        <app-attribute-box title="AC" [value]="charDefenses.ac"></app-attribute-box>
+    </div>
+    <div class="info-box">
+        <div class="info">
+            <app-attribute-var-value title="HP" [attribute]="character.hp"></app-attribute-var-value>
+            <app-attribute-var-value title="WP" [attribute]="character.wp"></app-attribute-var-value>
+        </div>
+        <div class="skills">
+            <div *ngFor="let skill of character.skills">
+                    <app-skill [skill]="skill" [onClick]="skillClick"></app-skill>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="quick-powers">
+    <div class="powers-title">Quick Powers</div>
+    <div class="powers-box">
+        <span class="power"></span>
+        <span class="power"></span>
+        <span class="power"></span>
+        <span class="power"></span>
+    </div>
+</div>
+</div>

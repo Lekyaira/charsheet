@@ -1,0 +1,4 @@
+<div class="attribute-box" (click)="clickEvent()" [ngStyle]="{'cursor': onClick != null ? 'pointer' : 'default'}">
+    <span class="box-title" *ngIf="title">{{title}}</span>
+    <span class="box-value" *ngIf="value">{{value}}<span class="modifier" *ngIf="showModifer">{{modifierText}}</span></span>
+</div>
